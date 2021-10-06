@@ -14339,7 +14339,7 @@ depending if the datagram was <strong><em>received</em></strong> or is going to 
 </div><aside class="notes">
 
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To receive a datagram, an "empty" Class <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/DatagramPacket.html">DatagramPacket</a> is required. It's underlying byte buffer must be large enough to contain the incoming payload, otherwise any excess will be discarded.</p>
+<p>To receive a datagram, an "empty" <a href="https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/DatagramPacket.html">DatagramPacket</a> object is required. It's underlying byte buffer must be large enough to contain the incoming payload, otherwise any excess will be discarded.</p>
 <p>Methods are provided to modify part of an existing DatagramPacket. For instance, it is possible to update independently the ip address, the port, the payload or the payload length.</p>
 
 </div>
