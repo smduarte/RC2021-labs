@@ -2,7 +2,6 @@ package tcp;
 
 import java.io.*;
 import java.net.*;
-import java.util.Scanner;
 
 public class FileSenderServer {
 	static final int BUF_SIZE = 1024;
