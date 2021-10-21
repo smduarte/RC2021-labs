@@ -14198,11 +14198,18 @@ div.jp-OutputPrompt {
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="HTTP-status-line">HTTP status line<a class="anchor-link" href="#HTTP-status-line">&#182;</a></h3><p>The status line consists of the <strong>protocol version</strong> followed by a <strong>numeric status code</strong> and its associated textual phrase.</p>
 <p><br></p>
-<p><code>HTTP/1.0 20 OK</code></p>
+<p><code>HTTP/1.0 200 OK</code></p>
 <p><code>HTTP/1.1 404 NOT FOUND</code></p>
 
 </div>
 </div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="HTTP-response-header">HTTP response header<a class="anchor-link" href="#HTTP-response-header">&#182;</a></h2><p>text key/value pair separated by :, describing the returned resource and/or server.</p>
+<p><code>Content-Type: text/html\r\n</code><br>
+<code>Content-Length: 374\r\n</code></p>
+
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="HTTP-response-message-body">HTTP response message body<a class="anchor-link" href="#HTTP-response-message-body">&#182;</a></h3><ul>
 <li><p>Text or binary data (can be anything);</p>
@@ -14246,7 +14253,7 @@ is key to this understanding.</p>
 <li><p>Access the Apache server using the supplied <a href="https://github.com/smduarte/RC2021-labs/blob/main/aula3/RC2021-aula3/src/http/HttpClient.java">HttpClient</a> class.</p>
 <ul>
 <li>Try it locally, by executing in Eclipse;</li>
-<li>Try it in a docker container. Make sure you understand which IP addresses and port needs to used...</li>
+<li>Try it in a docker container. Make sure you understand which IP addresses and port need to used...</li>
 </ul>
 </li>
 </ol>
