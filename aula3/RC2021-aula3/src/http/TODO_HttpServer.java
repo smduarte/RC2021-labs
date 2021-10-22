@@ -45,7 +45,7 @@ public class TODO_HttpServer {
 	 * postFile: receives the requested file resources from the client
 	 * 
 	 */
-	static void postFile(String fileName, OutputStream out) throws IOException {
+	static void postFile(String fileName, InputStream in, OutputStream out) throws IOException {
 		// TODO
 	}
 
@@ -74,7 +74,7 @@ public class TODO_HttpServer {
 			getFile(requestParts[1], out);
 			break;
 		case POST:
-			postFile(requestParts[1], out);
+			postFile(requestParts[1], in, out);
 			break;
 		default:
 			Http.dumpStream(notImplementedPageStream(), out);
