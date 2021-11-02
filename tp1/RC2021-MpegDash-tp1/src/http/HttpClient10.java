@@ -45,7 +45,6 @@ public class HttpClient10 implements HttpClient {
 		}
 	}
 
-	private static final String RANGED_GET_FORMAT_STR = "GET %s HTTP/1.0\r\n%s\r\nRange: bytes=%s-%s\r\n\r\n";
 	public byte[] doGetRange(String urlStr, long start, long end) {
 		// TODO
 		return null;
