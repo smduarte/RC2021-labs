@@ -47,19 +47,8 @@ public class HttpClient10 implements HttpClient {
 
 	private static final String RANGED_GET_FORMAT_STR = "GET %s HTTP/1.0\r\n%s\r\nRange: bytes=%s-%s\r\n\r\n";
 	public byte[] doGetRange(String urlStr, long start, long end) {
-		try {
-			URL url = new URL(urlStr);
-
-			try (Socket cs = new Socket(url.getHost(), url.getPort())) {
-				String request = String.format(RANGED_GET_FORMAT_STR, url.getFile(), USER_AGENT, start, end);
-				System.out.println(request);
-				cs.getOutputStream().write(request.getBytes());
-				return getContents(cs.getInputStream());
-			}
-		} catch (Exception x) {
-			x.printStackTrace();
-			return null;
-		}
+		// TODO
+		return null;
 	}
 
 	@Override
