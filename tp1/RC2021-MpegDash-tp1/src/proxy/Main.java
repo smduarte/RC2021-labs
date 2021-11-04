@@ -43,8 +43,8 @@ public class Main {
 			
 			this.http = new HttpClient10();
 			
-			var manifestURL = String.format("%s/%s/manifest.txt", MEDIA_SERVER_BASE_URL, movie);
-			this.manifest = MovieManifest.parse(new String( http.doGet( manifestURL )));
+			
+			this.manifest = null; //TODO
 		}
 		
 		/**
@@ -57,7 +57,7 @@ public class Main {
 		 * be fed with a zero-length data segment
 		 */
 		public void run() {
-			
+			// TODO
 		}
 	}
 }
