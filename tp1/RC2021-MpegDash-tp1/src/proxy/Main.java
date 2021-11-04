@@ -57,22 +57,7 @@ public class Main {
 		 * be fed with a zero-length data segment
 		 */
 		public void run() {
-			try {
-				var track = manifest.tracks().get(0);
-				
-				track.segments().forEach( System.err::println );
-				
-				for( var segment : track.segments() ) {
-					System.err.println( "--->"  + segment);
-					var segmentUrl = String.format("%s/%s/%s", MEDIA_SERVER_BASE_URL, movie, track.filename());
-					var data = http.doGetRange(segmentUrl, segment.offset(), segment.offset() + segment.length() - 1 );
-					System.err.printf("Fetched offset: %s, length: %s, data.length: %s ", segment.offset(), segment.length(), data.length);
-					queue.put( new SegmentContent(track.contentType(), data));
-				}
-				queue.put( new SegmentContent(track.contentType(), new byte[0]));				
-			} catch(Exception x ) {
-				x.printStackTrace();
-			}
+			
 		}
 	}
 }
