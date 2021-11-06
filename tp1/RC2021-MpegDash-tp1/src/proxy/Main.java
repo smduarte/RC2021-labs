@@ -10,7 +10,7 @@ import media.MovieManifest.SegmentContent;
 import proxy.server.ProxyServer;
 
 public class Main {
-	static final String MEDIA_SERVER_BASE_URL = "http://localhost:80";
+	static final String MEDIA_SERVER_BASE_URL = "http://localhost:9999";
 
 	public static void main(String[] args) throws Exception {
 
