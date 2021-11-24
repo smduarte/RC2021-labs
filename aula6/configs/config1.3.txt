@@ -5,7 +5,7 @@
 # uncomment if you want to see control algorithms traces
 # parameter trace   
 
-Node 0 1 cnss.lib.EndSystemControl SWSender 10
+Node 0 1 cnss.lib.EndSystemControl NaifSWSender 10
 Node 1 1 cnss.lib.EndSystemControl SWReceiver
 Node 2 2 cnss.lib.FloodingSwitch cnss.lib.EmptyApp
 Node 3 2 cnss.lib.FloodingSwitch cnss.lib.EmptyApp
