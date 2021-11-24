@@ -1,0 +1,13 @@
+# A network with a sender node and a receiver node interconnected
+# by a direct link. The link has 2 Mbps bandwidth and 20 ms latency
+
+
+# uncomment if you want to see control algorithms traces
+# parameter trace 
+
+
+Node 0 1 cnss.lib.EndSystemControl assignment1.FilesSender 10
+Node 1 1 cnss.lib.EndSystemControl assignment1.FilesReceiver
+
+Link 0.0 1.0 2000000 20 0.0 0.0
+

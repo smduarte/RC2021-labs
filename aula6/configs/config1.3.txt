@@ -1,0 +1,16 @@
+
+# A network with a sender node and a receiver node interconnected
+# by two switches. All links have 2 Mbps bandwidth and 20 ms latency.
+
+# uncomment if you want to see control algorithms traces
+# parameter trace   
+
+Node 0 1 cnss.lib.EndSystemControl assignment1.FilesSender 10
+Node 1 1 cnss.lib.EndSystemControl assignment1.FilesReceiver
+Node 2 2 cnss.lib.FloodingSwitch cnss.lib.EmptyApp
+Node 3 2 cnss.lib.FloodingSwitch cnss.lib.EmptyApp
+
+Link 0.0 2.0 2000000 20 0.0 0.0
+Link 2.1 3.0 2000000 20 0.0 0.0
+Link 3.1 1.0 2000000 20 0.0 0.0
+
