@@ -6,8 +6,8 @@
 # parameter trace 
 
 
-Node 0 1 cnss.lib.EndSystemControl assignment1.FilesSender 10
-Node 1 1 cnss.lib.EndSystemControl assignment1.FilesReceiver
+Node 0 1 cnss.lib.EndSystemControl SWSender 10
+Node 1 1 cnss.lib.EndSystemControl SWReceiver
 
 Link 0.0 1.0 2000000 20 0.0 0.0
 
