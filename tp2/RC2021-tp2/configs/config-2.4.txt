@@ -1,0 +1,12 @@
+# A network with a sender node and a receiver node interconnected
+# by a direct link. The link has 2 Mbps bandwidth and 20 ms latency
+
+
+# uncomment if you want to see control algorithms traces
+# parameter trace 
+
+
+Node 0 1 cnss.lib.EndSystemControl FT20ClientGBN_DT earth.jpg 1000 4
+Node 1 1 cnss.lib.EndSystemControl FT20Server 5
+
+Link 0.0 1.0 2000000 20 0.15 0.1
