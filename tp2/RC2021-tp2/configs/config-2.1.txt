@@ -7,6 +7,6 @@
 
 
 Node 0 1 cnss.lib.EndSystemControl FT21SenderSW earth.jpg 1000
-Node 1 1 cnss.lib.EndSystemControl ft21.recv.FT21Receiver 10
+Node 1 1 cnss.lib.EndSystemControl ft21.recv.FT21Receiver 1
 
 Link 0.0 1.0 2000000 20 0.15 0.0
