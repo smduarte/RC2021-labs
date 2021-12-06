@@ -52,7 +52,7 @@ public class FT21Receiver extends FT21AbstractReceiverApplication {
 		super.logPacket(now, block);
 		
 		// outside the window.
-		if (block.seqN < nextSeqN || block.seqN > nextSeqN + windowSize) {
+		if (block.seqN < nextSeqN || block.seqN >= nextSeqN + windowSize) {
 			int cSeqN = (windowSize == 1 ? nextSeqN - 1 : -(nextSeqN - 1));
 			super.sendPacket(now, client, new FT21_AckPacket( cSeqN, block.optional_data));			
 		}
