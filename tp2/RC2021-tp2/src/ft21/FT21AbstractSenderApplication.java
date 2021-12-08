@@ -45,7 +45,9 @@ abstract public class FT21AbstractSenderApplication extends AbstractApplicationA
 
 		switch (PacketType.values()[bytes[0]]) {
 		case ACK:
-			this.on_receive_ack(now, src, new FT21_AckPacket(bytes));
+			FT21_AckPacket ack = new FT21_AckPacket(bytes);
+			this.logPacket(now, ack);
+			this.on_receive_ack(now, src, ack);
 			break;
 		case ERROR:
 		default:
