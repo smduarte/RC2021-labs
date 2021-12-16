@@ -27,9 +27,7 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 	private int[] receivedPackets;
 
 	private State state;
-	private int lastPacketSent;
-
-
+	
 	public FT21SenderGBN() {
 		super(true, "FT21SenderGBN");
 	}
@@ -51,13 +49,12 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 		
 		receivedPackets  = new int[lastPacketSeqN+1];
 		
-		lastPacketSent = -1;
 		sendNextPacket(now);
 		return 1;
 	}
 	
 	public void on_clock_tick(int now) {
-		if(packetsInQueue < windowSize && state == state.UPLOADING && nextPacketSeqN <= lastPacketSeqN) {
+		if(packetsInQueue < windowSize && state == State.UPLOADING && nextPacketSeqN <= lastPacketSeqN) {
 			packetsSent = nextPacketSeqN;
 			packetsInQueue++;
 			sendNextPacket(now);
@@ -69,9 +66,11 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 	
 	public void on_timeout(int now) {
 		super.on_timeout(now);
+		super.tallyRTT(now);
+		super.tallyTimeout(now);
 		
 		packetsInQueue = 0;
-		nextPacketSeqN = packetCounter;
+		nextPacketSeqN = packetCounter+1;
 	}
 
 	private void sendNextPacket(int now) {	
@@ -88,7 +87,6 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 		case FINISHED:
 		}
 		
-		lastPacketSent = now;
 	}
 
 	@Override
@@ -97,7 +95,7 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 		case BEGINNING:
 			state = State.UPLOADING;
 		case UPLOADING:
-			if (packetsSent == 0) {
+			if (packetsSent == 0 && ack.cSeqN == 0) {
 				nextPacketSeqN = ack.cSeqN + 1;
 			}
 			else if(ack.cSeqN > packetCounter) {
@@ -114,7 +112,6 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 				sendNextPacket(now);
 			}
 			self.set_timeout(TIMEOUT);
-			//lastPacketSent= -1;
 			break;
 		case FINISHING:
 			super.log(now, "All Done. Transfer complete...");
