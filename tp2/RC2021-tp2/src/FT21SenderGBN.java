@@ -66,9 +66,7 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 		}
 		
 	}
-	/*
-	 * Olho pra o ultimo ack recebido pelo sender e envio o proximo outra vez
-	 */
+	
 	public void on_timeout(int now) {
 		super.on_timeout(now);
 		
