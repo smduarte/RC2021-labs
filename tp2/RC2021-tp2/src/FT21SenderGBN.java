@@ -60,10 +60,8 @@ public class FT21SenderGBN extends FT21AbstractSenderApplication {
 		if(packetsInQueue < windowSize && state == state.UPLOADING && nextPacketSeqN <= lastPacketSeqN) {
 			packetsSent = nextPacketSeqN;
 			packetsInQueue++;
-			long time = System.currentTimeMillis();
 			sendNextPacket(now);
-			time += System.currentTimeMillis();
-			self.set_timeout(TIMEOUT + (int) time);
+			self.set_timeout(TIMEOUT);
 			nextPacketSeqN++;
 		}
 		
