@@ -81,7 +81,7 @@ public class FT21SenderSW extends FT21AbstractSenderApplication {
 			nextPacketSeqN = ack.cSeqN + 1;
 			if (nextPacketSeqN > lastPacketSeqN)
 				state = State.FINISHING;
-			lastPacketSent= -1;
+			lastPacketSent = -1;
 			break;
 		case FINISHING:
 			super.log(now, "All Done. Transfer complete...");
